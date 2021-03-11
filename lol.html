@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>уалиев 5.03</title>
+<style>
+
+/* Домашняя работа */
+.containerdz {
+	display: flex;;
+	justify-content: center;
+}
+.main-div {
+	width: 75px;
+	height: 75px;
+    position: relative;
+    background: red;
+    margin: 100px auto;
+}
+.sub-div {
+	width: 75px;
+	height: 75px;
+    position: absolute;
+    background: green;
+    transition: 1s;
+}
+.second {
+    transform-origin: right top;
+}
+.fourth {
+    transform-origin: left top;
+}
+.main-div:hover {
+    transition: 1s 1s;
+    transform: rotate(1turn);
+}
+.main-div:hover .first {
+	transform: translateY(75px);
+}
+.main-div:hover .third {
+	transform: translateY(-75px);
+}
+.main-div:hover .second {
+	transform: rotate(-90deg);
+}
+.main-div:hover .fourth {
+	transform: rotate(90deg);
+}
+
+
+/* Сдвиг элементов */
+.Fstatic {
+	display: inline-block; 
+	margin: 10px; 
+	background: gray; 
+}
+.Ftest  {
+	width: 180px; 
+	height: 100px; 
+	line-height: 100px; 
+	text-align: center; 
+	transition: 0.2s; 
+}
+.test2, .test4, .test6 {background: orange;}
+.test, .test3, .test5 {background: plum;}
+.test:hover {
+	transform: translate(20px, 20px); 
+}
+.test2:hover {
+	transform: translate(-20px, -20px); 
+}
+.test3:hover {
+	transform: translate(20px, 0); 
+}
+.test4:hover {
+	transform: translate(-20px, 0); 
+}
+.test5:hover {
+	transform: translate(0, 20px); 
+}
+.test6:hover {
+	transform: translate(0, -20px); 
+}
+
+
+/* Сдвиг элементов по конкретным осям */
+.Sstatic {
+display: inline-block; 
+margin: 10px; 
+background: gray; 
+}
+.Stest {
+	width: 180px; 
+	height: 100px;
+	line-height: 100px; 
+	text-align: center; 
+	transition: 0.2s; 
+}
+.Stest2, .Stest4, .Stest6 {background: orange;} 
+.Stest, .Stest3, .Stest5 {background: plum;} 
+.Stest:hover {
+	transform: translateX(20px); 
+}
+.Stest2:hover {
+	transform: translateX(-20px); 
+}
+.Stest3:hover {
+	transform: translateY(20px); 
+}
+.Stest4:hover {
+	transform: translateY(-20px); 
+}
+.Stest5:hover {
+	transform: perspective(500px) rotateX(45deg) translateZ(30px); 
+}
+.Stest6:hover {
+	transform: perspective(500px) rotateX(45deg) translateZ(-30px); 
+}
+
+/* Трехмерный сдвиг элементов */
+.Tstatic {
+	display: inline-block; 
+	margin: 10px; 
+	background: gray; 
+}
+.TtestM {
+	width: 180px; 
+	height: 100px; 
+	line-height: 100px; 
+	text-align: center; 
+	transition: 0.2s; 
+}
+.Ttest2, .Ttest4, .Ttest6 {background: orange;} 
+.Ttest, .Ttest3, .Ttest5 {background: plum;} 
+.Ttest:hover {
+	transform: perspective(500px) rotateX(45deg) translate3d(20px,20px,20px); 
+}
+.Ttest2:hover {
+	transform: perspective(500px) rotateX(45deg) translate3d(-20px,-20px,-20px); 
+}
+.Ttest3:hover {
+	transform: perspective(500px) rotateX(45deg) translate3d(-20px,-20px,-80px);
+}
+.Ttest4:hover {
+	transform: perspective(500px) rotateX(45deg) translate3d(0,0,-80px); 
+}
+.Ttest5:hover {
+	transform: perspective(500px) rotateX(45deg) translate3d(20px,0, 40px); 
+}
+.Ttest6:hover {
+	transform: perspective(500px) rotateX(45deg) translate3d(0,20px, 40px); 
+}
+
+/* Указание перспективы обзора элемента */
+.FOstatic {
+	display: inline-block; 
+	margin: 10px; 
+	background: gray; 
+}
+.FOtestM {
+	width: 180px;
+	height: 100px; 
+	line-height: 100px; 
+	text-align: center; 
+	transition: 0.2s; 
+}
+.FOtest2, .FOtest4, .FOtest6 {background: orange;} 
+.FOtest, .FOtest3, .FOtest5 {background: plum;} 
+.FOtest:hover {
+	transform: perspective(50px) rotateX(45deg); 
+}
+.FOtest2:hover {
+	transform: perspective(100px) rotateX(45deg); 
+}
+.FOtest3:hover {
+	transform: perspective(200px) rotateX(45deg); 
+}
+.FOtest4:hover {
+	transform: perspective(300px) rotateX(45deg); 
+}
+.FOtest5:hover {
+	transform: perspective(400px) rotateX(45deg); 
+}
+.FOtest6:hover {
+	transform: perspective(500px) rotateX(45deg); 
+}
+
+/* Матрицы преобразований в CSS */
+.FIstatic {
+	display: inline-block; 
+	margin: 10px;
+	background: gray; 
+}
+.FItestM {
+	width: 180px; 
+	height: 100px; 
+	line-height: 100px;
+	text-align: center; 
+	transition: 0.2s; 
+}
+.FItest2, .FItest4, .FItest6 {background: orange;} 
+.FItest, .FItest3, .FItest5 {background: plum;} 
+.FItest:hover {
+	transform: matrix(0.5,0,0,1,0,0); 
+}
+.FItest2:hover {
+	transform: matrix(1,0,0,1.5,0,0);
+}
+.FItest3:hover {
+	transform: matrix(0,-1, 1,0,0,0); 
+}
+.FItest4:hover {
+	transform: matrix(1,0, -1,1,0,0);
+}
+.FItest5:hover {
+	transform: matrix(1,0, 0,1,50,0); 
+}
+.FItest6:hover {
+	transform: matrix3d(0.3, -0.4, 0.8, 0, 0.2, 0.9, 0.4, 0, -0.9, 0, 0.4, 0, 0, 0, 0, 1); 
+}
+
+/* Пример изменения точки преобразования элемента */
+.Sstatic {
+	display: inline-block; 
+	margin: 10px; 
+	background: gray; 
+}
+.StestM {
+	width: 180px; 
+	height: 100px; 
+	line-height: 100px; 
+	text-align: center; 
+	transition: 0.2s; 
+}
+.Stest2, .Stest4, .Stest6 {background: orange;} 
+.Stest, .Stest3, .Stest5 {background: plum;} 
+.Stest:hover {
+	transform: rotate(15deg); 
+	transform-origin: 50% 50% 0; 
+}
+.Stest2:hover {
+	transform: rotate(15deg); 
+	transform-origin: left top; 
+}
+.Stest3:hover {
+	transform: rotate(15deg);
+	transform-origin: center bottom; 
+}
+.Stest4:hover {
+	transform: rotate(15deg); 
+	transform-origin: 100% 0%; 
+}
+.Stest5:hover {
+	transform: rotate(15deg) perspective(500px); 
+	transform-origin: 50% 50% -250px; 
+}
+.Stest6:hover {
+	transform: rotate(15deg) perspective(500px); 
+	transform-origin: 50% top 250px; 
+}
+
+</style>
+</head>
+<body>
+<h1>Домашняя работа</h1>
+<div class="containerdz">
+	<div class="main-div">
+		<div class="sub-div first"></div>
+		<div class="sub-div second"></div>
+		<div class="sub-div third"></div>
+		<div class="sub-div fourth"></div>
+	</div>
+</div>
+	<br><br><br><br><br><br>
+
+<h1>Сдвиг элементов</h1>
+	<div class = "Fstatic"><div class = "Ftest test">translate(20px, 20px)</div></div>
+	<div class = "Fstatic"><div class = "Ftest test2">translate(-20px, -20px)</div></div>
+	<div class = "Fstatic"><div class = "Ftest test3">translate(20px,	0)</div></div><br>
+	<div class = "Fstatic"><div class = "Ftest test4">translate(-20px, 0)</div></div>
+	<div class = "Fstatic"><div class = "Ftest test5">translate(0, 20px)</div></div>
+	<div class = "Fstatic"><div class = "Ftest test6">translate(0, -20px)</div></div>
+
+<h1>Сдвиг элементов по конкретным осям</h1>
+	<div class = "Sstatic"><div class = "Stest Stest">translateX(20px)</div></div>
+	<div class = "Sstatic"><div class = "Stest Stest2">translateX(-20px)</div></div>
+	<div class = "Sstatic"><div class = "Stest Stest3">translateY(20px)</div></div><br>
+	<div class = "Sstatic"><div class = "Stest Stest4">translateY(-20px)</div></div>
+	<div class = "Sstatic"><div class = "Stest Stest5">translateZ(30px)</div></div>
+	<div class = "Sstatic"><div class = "Stest Stest6">translateZ(-30px)</div></div>
+
+<h1>Трехмерный сдвиг элементов</h1>
+	<div class = "Tstatic"><div class = "TtestM Ttest">translate3d(20px,20px,20px)*</div></div>
+	<div class = "Tstatic"><div class = "TtestM Ttest2">translate3d(-20px,-20px,-20px)*</div></div>
+	<div class = "Tstatic"><div class = "TtestM Ttest3">translate3d(-20px,-20px,-80px)*</div></div><br>
+	<div class = "Tstatic"><div class = "TtestM Ttest4">translate3d(0,0,-80px)*</div></div>
+	<div class = "Tstatic"><div class = "TtestM Ttest5">translate3d(20px,0,40px)*</div></div>
+	<div class = "Tstatic"><div class = "TtestM Ttest6">translate3d(0,20px,40px)*</div></div>
+
+<h1>Указание перспективы обзора элемента</h1>
+	<div class = "FOstatic"><div class ="FOtestM FOtest">perspective(50px)*</div></div>
+	<div class = "FOstatic"><div class ="FOtestM FOtest2">perspective(100px)*</div></div>
+	<div class = "FOstatic"><div class ="FOtestM FOtest3">perspective(200px)*</div></div><br>
+	<div class = "FOstatic"><div class ="FOtestM FOtest4">perspective(300px)*</div></div>
+	<div class = "FOstatic"><div class ="FOtestM FOtest5">perspective(400px)*</div></div>
+	<div class = "FOstatic"><div class ="FOtestM FOtest6">perspective(500px)*</div></div>
+
+<h1>Матрицы преобразований в CSS</h1>
+	<div class = "FIstatic"><div class ="FItestM FItest">matrix(0.5,0,0,1,0,0)</div></div>
+	<div class = "FIstatic"><div class ="FItestM FItest2">matrix(1,0,0,1.5,0,0)</div></div>
+	<div class = "FIstatic"><div class ="FItestM FItest3">matrix(0,-1,1,0,0,0)</div></div><br>
+	<div class = "FIstatic"><div class ="FItestM FItest4">matrix(1,0,-1,1,0,0)</div></div>
+	<div class = "FIstatic"><div class ="FItestM FItest5">matrix(1,0,0,1,50,0)</div></div>
+	<div class = "FIstatic"><div class ="FItestM FItest6">matrix3d()</div></div>
+
+<h1>Пример изменения точки преобразования элемента</h1>
+	<div class = "Sstatic"><div class = "StestM Stest">50% 50% 0</div></div>
+	<div class = "Sstatic"><div class = "StestM Stest2">left top</div></div>
+	<div class = "Sstatic"><div class = "StestM Stest3">center bottom</div></div><br>
+	<div class = "Sstatic"><div class = "StestM Stest4">100% 0%</div></div>
+	<div class = "Sstatic"><div class = "StestM Stest5">50% 50% -250px</div></div>
+	<div class = "Sstatic"><div class = "StestM Stest6">50% top 250px</div></div>
+</body>
+</html>
